@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Button from './components/styles/Button';
+import NavigationItems from './components/styles/NavItems';
+import AnyElement from './components/styles/AnyElement';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+      <header>
+      <NavigationItems navItems={["Home","about","photos"]}>
+      </NavigationItems>
+      </header>
+
+      {/* the as prop helps us create any 
+        specific element use when u want same styles on all*/}
+      <AnyElement as="header">Hii</AnyElement>
+      <AnyElement as="footer">&copy;</AnyElement>
+      <Button>Click Here</Button>
       </div>
     );
   }
